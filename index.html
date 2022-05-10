@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/output.css" rel="stylesheet">
+  </head>
+  <body class="area">
+  <ul class="circles relative -z-10">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+    <nav class="flex justify-center items-center z-10">
+      <div class="rounded-b-xl bg-blue-400 h-[4rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
+        <div class="inline-block w-[30%] min-w-[200px] mx-auto"></p><p class="inline-block font-bold text-white text-3xl ">Artificial Labs</p></div>
+        <div class="w-[70%] mx-[10%] justify-around flex">
+          <span class="text-white font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 transition-[1s]">Home</span>
+          <span class="text-white font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 transition-[1s]">Test</span>
+          <span class="text-white font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 transition-[1s]">About</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container main flex justify-center items-center my-10 h-[80vh] w-[60%] bg-gradient-to-tr from-blue-400 to-blue-500 rounded-xl mx-auto shadow-md flex-col min-h-[700px] max-w-[1000px] p-5">
+
+      <h1 class="font-bold text-white text-3xl transition-[2s] relative top-0 mx-5 text-center" id="introText">Hvilket parti minder du mest om?</h1>
+      <button onclick="beginQuestioniare()" id="button" class="bg-cyan-800 hover:bg-blue-600 transition-[1s] text-white px-8 py-5 m-5 rounded-xl text-xl cursor-pointer">Start test</button>
+
+      <div class="flex flex-col justify-center relative top-[-200px] w-full">
+        <h2 id="questionText" class="invisible text-2xl text-white opacity-0 transition-[1s] mx-auto"></h2>
+        <div class="flex justify-around invisible opacity-0 relative top-[9rem] transition-[1s]" id="slider-container">
+          <p class="text-center font-bold text-white">Uenig<br>-5</p>
+          <input type="range" min="-5" max="5" value="0" class="slider range transition-[1s] w-[80%] max-w-[400px] mx-auto" id="slider">
+          <p class="text-center font-bold text-white">Enig<br>5</p>
+        </div>
+        
+        <div class="mx-auto absolute left-[calc(50%-2rem)] top-[12rem]">
+          <div class="rounded-[50%] bg-white w-[4rem] h-[4rem] mx-auto"></div>
+          <img src="Rolling-1s-200px (1).svg" />
+        </div>
+        
+      </div>
+      <button onclick="nextQuestion()" id="nextButton" class="bg-cyan-700 opacity-0 relative z-20 hover:bg-blue-600 top-[5rem] transition-[1s] text-white px-8 py-5 m-5 rounded-xl text-xl cursor-pointer invisible">Næste</button>
+    </div>
+  </body>
+  <style>
+    .range {
+      display: inline-block;
+      --SliderColor: hsl(50, 100%, 50%);
+      margin: 36px 20px 20px
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      position: relative
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 300px;
+      height: 4px;
+      border: none;
+      border-radius: 3px
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 24px;
+      width: 24px;
+      border-radius: 510%;
+      background: var(--SliderColor);
+      margin-top: -10px;
+      cursor: pointer
+    }
+
+    .focused::-webkit-slider-thumb {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
+    }
+
+    .clicked::-webkit-slider-thumb {
+      -webkit-transform: scale(1.5)
+    }
+
+    .disabled::-webkit-slider-thumb {
+      -webkit-transform: scale(0.9);
+      box-shadow: 0 0 0 3px #141414;
+      background: #515151 !important;
+      border-color: #515151 !important
+    }
+
+    input[type=range]:focus {
+      outline: none
+    }
+
+    .rangeM input[type=range].disabled::-webkit-slider-runnable-track {
+      background: #515151!important
+    }
+
+    .rangeM input[type=range]::-webkit-slider-thumb {
+      background: #3f51b5;
+      border-color: #3f51b5
+    }
+
+    .range:hover input[type=range]:before {
+      color: white;
+      content: '50';
+      position: absolute;
+      font-family: Roboto Slab;
+      top: -49px;
+      background: #3f51b5;
+      padding: 8px 0 3px;
+      font-size: 14px;
+      width: 30px;
+      text-align: center;
+      border-radius: 100% 100% 0 0
+    }
+
+    .range:hover input[type=range]:after {
+      content: '';
+      position: absolute;
+      top: -19px;
+      left: 50px;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 8px solid #3f51b5;
+      font-family: Roboto Slab
+    }
+  </style>
+
+  <script>
+    let button = document.getElementById("button");
+    let introText = document.getElementById("introText");
+
+    let questionText = document.getElementById("questionText");
+    let nextButton = document.getElementById("nextButton");
+    let slider = document.getElementById("slider");
+    let slider_container = document.getElementById("slider-container");
+
+    let questions = ["Hvor mange penge bør gå til immigration?", "Hvordan synes du at skatten ligger nu?", "Hvor meget skal vi opruste vores militær?"];
+    let current_question = 0;
+    let answers = [];
+
+    function beginQuestioniare() {
+      button.style.visibility = "hidden";
+      button.style.opacity = "0";
+
+      introText.style.top = "-160px";
+
+      questionText.style.visibility = "visible";
+      nextButton.style.visibility = "visible";
+      slider.style.visibility = "visible";
+      slider_container.style.visibility = "visible";
+
+      questionText.innerHTML = questions[current_question];
+
+      setTimeout(() => {
+        questionText.style.opacity = "1";
+        nextButton.style.opacity = "1";
+        slider.style.opacity = "1";
+        slider_container.style.opacity = "1";
+       }, 300);
+    }
+
+    function nextQuestion() {
+      current_question += 1;
+      slider_container.style.opacity = "0";
+
+      for (let i = 0; i<questionText.innerHTML.length+5; i++) {
+        setTimeout(() => {
+          questionText.innerHTML = questionText.innerHTML.slice(0, questionText.innerHTML.length-1);
+       }, 10 * i);
+      }
+
+      setTimeout(() => {
+        for (let i = 0; i<questions[current_question].length; i++) {
+        setTimeout(() => {
+          questionText.innerHTML = questions[current_question].slice(0, i+1);
+        }, 10 * i);
+        slider_container.style.opacity = "1";
+      }
+      }, 1500)
+
+      questionText.innerHTML = questions[current_question];
+
+      answers.push(slider.value);
+      slider.value = 0;
+      console.log(answers);
+    } 
+
+
+    slider.oninput =_=> {slider.style.setProperty('--SliderColor', `hsl(${(parseInt(slider.value) * 10)+50}, 100%, 50%)`); }
+
+  </script>
+</html>
