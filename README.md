@@ -2,7 +2,7 @@
 
 ## Descriprion
 
-Online questionaire to determine the user's cultural dimensions according to [Geert Hofstede](https://geerthofstede.com/)'s model.
+Online questionnaire to determine the user's cultural dimensions according to [Geert Hofstede](https://geerthofstede.com/)'s model.
 
 ### Disclaimer:
 
