@@ -1,6 +1,6 @@
 # Cultural Dimensions
 
-## Descriprion
+## Description
 
 Online questionnaire to determine the user's cultural dimensions according to [Geert Hofstede](https://geerthofstede.com/)'s model.
 
