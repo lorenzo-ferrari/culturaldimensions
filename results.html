@@ -1,31 +1,213 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Cultural Dimensions</title>
-  <script type="application/javascript" src="countries.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="dist/output.css" rel="stylesheet">
+    <title>Cultural Dimensions - Which country are you closest to?</title>
+  </head>
+  <body class="area" style="overflow-x:hidden;">
+  <div class="">
+  <ul class="circles relative -z-10">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 
-<body>
+    <nav class="flex justify-center items-center z-10">
+      <div class="rounded-b-xl bg-white h-[4rem] px-[5rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
+        <div class="inline-block w-[30%] min-w-[200px] mx-auto"></p><p class="inline-block font-bold text-blue-500 text-3xl ">Artificial Labs</p></div>
+        <div class="w-[70%] mx-[10%] justify-around flex">
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">Home</span>
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl cursortransition-[1s]">Test</span>
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">About</span>
+        </div>
+      </div>
+    </nav>
 
-<h2>Your cultural dimensions:</h2>
-<p>Power distance: <span id="pdi">NaN</span></p>
-<p>Individualism: <span id="idv">NaN</span></p>
-<p>Masculinity: <span id="mas">NaN</span></p>
-<p>Uncertainty Anavoidance: <span id="uai">NaN</span></p>
-<p>Long term orientation: <span id="lto">NaN</span></p>
-<p>Indulgence: <span id="ivr">NaN</span></p>
+    <div class="container flex-col justify-around items-center my-10  h-[80vh] w-[100%] bg-gradient-to-tr from-white to-white rounded-xl mx-auto shadow-md flex-col min-h-[580px] max-w-[700px] sm:w-[60%] p-5">
 
-<h2>Closest countries:</h2>
-<p id="closest_1">placeholder</p>
-<p id="closest_2">placeholder</p>
-<p id="closest_3">placeholder</p>
-<p id="closest_4">placeholder</p>
-<p id="closest_5">placeholder</p>
+      <h1 class="font-bold text-black text-3xl transition-[2s] relative my-[5rem] mx-5 text-center" id="resultsText">Here are your results</h1>
 
-<script>
+      <div class="flex flex-col justify-center relative top-[-0px] w-full h-[10vh]">
+        <div id="diagram" class="mx-auto absolute top-[3rem] w-full h-[12rem] justify-around items-center text-center opacity-1 transition-[1s] flex">
+          <div class="flex justify-center flex-col h-full w-[50px]">
+            <div class="w-[50px] h-[120px] bg-blue-400 relative">
+              <div class="w-full h-[40%] bg-red-400">
 
+              </div>
+            </div>
+            <h1 class="rotate-45 mt-4">PDI</h1>
+          </div>
+
+          <div class="flex justify-center flex-col h-full w-[50px]">
+            <div class="w-[50px] h-[120px] bg-blue-400 relative">
+              <div class="w-full h-[40%] bg-red-400">
+
+              </div>
+            </div>
+            <h1 class="rotate-45 mt-4">IDV</h1>
+          </div>
+
+          <div class="flex justify-center flex-col h-full w-[50px]">
+            <div class="w-[50px] h-[120px] bg-blue-400 relative">
+              <div class="w-full h-[40%] bg-red-400">
+
+              </div>
+            </div>
+            <h1 class="rotate-45 mt-4">MAS</h1>
+          </div>
+
+          <div class="flex justify-center flex-col h-full w-[50px]">
+            <div class="w-[50px] h-[120px] bg-blue-400 relative">
+              <div class="w-full h-[40%] bg-red-400">
+
+              </div>
+            </div>
+            <h1 class="rotate-45 mt-4">UAI</h1>
+          </div>
+
+          <div class="flex justify-center flex-col h-full w-[50px]">
+            <div class="w-[50px] h-[120px] bg-blue-400 relative">
+              <div class="w-full h-[40%] bg-red-400">
+
+              </div>
+            </div>
+            <h1 class="rotate-45 mt-4">LTO</h1>
+          </div>
+
+          <div class="flex justify-center flex-col h-full w-[50px]">
+            <div class="w-[50px] h-[120px] bg-blue-400 relative">
+              <div id="" class="w-full h-[40%] bg-red-400">
+
+              </div>
+            </div>
+            <h1 class="rotate-45 mt-4">IVR</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <style>
+    .circles {
+      height:100%;
+    }
+
+    #but:active {
+      -webkit-animation-name: cssAnimation;
+      -webkit-animation-duration: 3s;
+      -webkit-animation-iteration-count: 1;
+      -webkit-animation-timing-function: ease;
+      -webkit-animation-fill-mode: forwards;
+    }
+
+    @-webkit-keyframes cssAnimation {
+      from {
+        border:0;
+      }
+      to {
+        border: 3px solid black;
+      }
+    }
+
+    .area {
+      background: linear-gradient(to bottom right, rgb(105, 189, 215), rgb(71, 61, 185));
+      height:100vh;
+      min-height: 730px;
+    }
+    
+    .range {
+      display: inline-block;
+      --SliderColor: hsl(50, 100%, 50%);
+      margin: 36px 20px 20px
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      position: relative
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 300px;
+      height: 4px;
+      border: none;
+      border-radius: 3px
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: none;
+      height: 24px;
+      width: 24px;
+      border-radius: 510%;
+      background: var(--SliderColor);
+      margin-top: -10px;
+      cursor: pointer
+    }
+
+    .focused::-webkit-slider-thumb {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
+    }
+
+    .clicked::-webkit-slider-thumb {
+      -webkit-transform: scale(1.5)
+    }
+
+    .disabled::-webkit-slider-thumb {
+      -webkit-transform: scale(0.9);
+      box-shadow: 0 0 0 3px #141414;
+      background: #515151 !important;
+      border-color: #515151 !important
+    }
+
+    input[type=range]:focus {
+      outline: none
+    }
+
+    .rangeM input[type=range].disabled::-webkit-slider-runnable-track {
+      background: #515151!important
+    }
+
+    .rangeM input[type=range]::-webkit-slider-thumb {
+      background: #3f51b5;
+      border-color: #3f51b5
+    }
+
+    .range:hover input[type=range]:before {
+      color: white;
+      content: '50';
+      position: absolute;
+      font-family: Roboto Slab;
+      top: -49px;
+      background: #3f51b5;
+      padding: 8px 0 3px;
+      font-size: 14px;
+      width: 30px;
+      text-align: center;
+      border-radius: 100% 100% 0 0
+    }
+
+    .range:hover input[type=range]:after {
+      content: '';
+      position: absolute;
+      top: -19px;
+      left: 50px;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 8px solid #3f51b5;
+      font-family: Roboto Slab
+    }
+  </style>
+
+ <script>
   function getQueryVariable(variable)
   {
     var query = window.location.search.substring(1)
@@ -82,7 +264,6 @@
     let id = "closest_" + (i+1);
     document.getElementById(id).innerHTML = countries[closest[i]].name + " : " + countries[closest[i]].values;
   }
+  </script>
 
-</script>
-</body>
 </html>

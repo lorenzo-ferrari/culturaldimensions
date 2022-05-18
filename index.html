@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/output.css" rel="stylesheet">
     <script type="application/javascript" src="./questions.js"></script>
-    <title>Cultural Dimensions</title>
+    <title>Cultural Dimensions - Which country are you closest to?</title>
   </head>
   <body class="area" style="overflow-x:hidden;">
   <div class="">
@@ -246,12 +246,12 @@
       abs_values[5] = 35*(m(12) - m(11)) + 40*(m(17) - m(16)); // IVR
 
       let rel_values = [];
-      rel_values[0] = percentage(abs_values[0], -extreme_values["pdi"]*0.8, extreme_values["pdi"]*0.8); // PDI
-      rel_values[1] = percentage(abs_values[1], -extreme_values["idv"]*0.8, extreme_values["idv"]*0.8); // IDV
-      rel_values[2] = percentage(abs_values[2], -extreme_values["mas"]*0.8, extreme_values["mas"]*0.8); // MAS
-      rel_values[3] = percentage(abs_values[3], -extreme_values["uai"]*0.8, extreme_values["uai"]*0.8); // UAI
-      rel_values[4] = percentage(abs_values[4], -extreme_values["lto"]*0.8, extreme_values["lto"]*0.8); // LTO
-      rel_values[5] = percentage(abs_values[5], -extreme_values["ivr"]*0.8, extreme_values["ivr"]*0.8); // IVR
+      rel_values[0] = percentage(abs_values[0], -extreme_values["pdi"], extreme_values["pdi"]); // PDI
+      rel_values[1] = percentage(abs_values[1], -extreme_values["idv"], extreme_values["idv"]); // IDV
+      rel_values[2] = percentage(abs_values[2], -extreme_values["mas"], extreme_values["mas"]); // MAS
+      rel_values[3] = percentage(abs_values[3], -extreme_values["uai"], extreme_values["uai"]); // UAI
+      rel_values[4] = percentage(abs_values[4], -extreme_values["lto"], extreme_values["lto"]); // LTO
+      rel_values[5] = percentage(abs_values[5], -extreme_values["ivr"], extreme_values["ivr"]); // IVR
 
       let new_location = `results.html`
               + `?pdi=${rel_values[0]}`
