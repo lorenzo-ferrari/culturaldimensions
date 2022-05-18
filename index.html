@@ -22,16 +22,43 @@
     <li></li>
   </ul>
 
-    <nav class="flex justify-center items-center z-10">
-      <div class="rounded-b-xl bg-white h-[4rem] px-[5rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
-        <div class="inline-block w-[30%] min-w-[200px] mx-auto"></p><p class="inline-block font-bold text-blue-500 text-3xl ">Cultural Dimensions</p></div>
-        <div class="w-[70%] mx-[10%] justify-around flex">
-          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">Home</span>
-          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl cursortransition-[1s]">Test</span>
-          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">About</span>
+  <nav class="flex justify-center items-center z-10">
+    <div class="rounded-b-xl bg-white h-[4rem] px-[5rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
+      <div class="w-[100%] min-w-[400px] mx-auto">
+        <p class="relative font-bold text-blue-500 text-3xl whitespace-nowrap ml-[2rem] w-[50%]">Cultural Dimensions</p></div>
+        <div class="w-[50%] justify-end flex xl:visible xl:relative absolute invisible">
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">Home</span>
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl cursortransition-[1s]">Test</span>
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">About</span>
         </div>
-      </div>
-    </nav>
+        <div class="xl:invisible visible flex w-[50%] justify-end flex-col">
+            <div class="h-[2.5rem] w-[2.5rem] bg-blue-400 rounded-xl flex justify-around items-center cursor-pointer">
+                <img src="pictures/hamburger.png" class="w-[90%] h-[90%] invert" onclick="toggleDropdown()">
+                <div class="flex flex-col w-[200px] absolute top-[3.5rem] z-10 invisible" id="dropdown">
+                  <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">Home</div>
+                  <div class="h-[3rem] w-full bg-blue-500 hover:bg-blue-700 text-center leading-[3rem] text-white text-2xl">Test</div>
+                  <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">About</div>
+                </div>
+              </div>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Hamburger dropdown -->
+  <script>
+    let shown = false;
+    let dropdown = document.getElementById("dropdown")
+
+    function toggleDropdown() {
+      shown = !shown;
+      if (shown) {
+        dropdown.style.visibility = "visible";
+      } else {
+        dropdown.style.visibility = "hidden";
+      }
+
+    }
+  </script>
 
     <div class="container flex justify-center items-center my-10  h-[80vh] w-[100%] bg-gradient-to-tr from-white to-white rounded-xl mx-auto shadow-md flex-col min-h-[580px] max-w-[700px] sm:w-[60%] p-5">
 
