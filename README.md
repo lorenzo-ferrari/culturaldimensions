@@ -22,6 +22,6 @@ Visit [https://lorenzo-ferrari.github.io/culturaldimensions](https://lorenzo-fer
   <img src="https://contrib.rocks/image?repo=lorenzo-ferrari/culturaldimensions" />
 </a>
 
-<br>
+<br><br>
 
 In particular, special thanks go to @mk4x for managing the design.
