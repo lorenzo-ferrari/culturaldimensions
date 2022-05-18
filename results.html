@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/output.css" rel="stylesheet">
+    <script type="application/javascript" src="./js/countries.js"></script>
     <title>Artificial Labs - Hvilket land er du?</title>
   </head>
   <body class="area" style="overflow-x:hidden;">
@@ -353,7 +354,7 @@
   for (let i = 0; i < k; ++i) closest[i] = NaN;
 
   for (let i = 0; i < countries.length; ++i) {
-    console.log(closest);
+    // console.log(closest);
     if (isNaN(closest[k-1]) || distance_sq(countries[closest[k-1]].values) > distance_sq(countries[i].values)) {
       closest[k-1] = i;
     }
@@ -365,6 +366,8 @@
       }
     }
   }
+
+  console.log("indexes of the " + k + " closest countries: " + closest);
 
   // for (let i = 0; i < k; ++i) {
   //   let id = "closest_" + (i+1);
