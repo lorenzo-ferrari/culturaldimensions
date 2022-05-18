@@ -154,8 +154,8 @@ questions = [
     ]
   },
   {
-    "intro":"",
-    "text":"How often do you feel nervous or tense?",
+    "intro":"How often do you feel nervous or tense?",
+    "text":"",
     "options":[
       "always",
       "usually",
@@ -165,8 +165,8 @@ questions = [
     ]
   },
   {
-    "intro":"",
-    "text":"Are you a happy person?",
+    "intro":"Are you a happy person?",
+    "text":"",
     "options":[
       "always",
       "usually",
@@ -176,8 +176,8 @@ questions = [
     ]
   },
   {
-    "intro":"",
-    "text":"Do other people or circumstances ever prevent you from doing what you really want to?",
+    "intro":"Do other people or circumstances ever prevent you from doing what you really want to?",
+    "text":"",
     "options":[
       "yes, always",
       "yes, usually",
@@ -187,8 +187,8 @@ questions = [
     ]
   },
   {
-    "intro":"",
-    "text":"All in all, how would you describe your state of health these days?",
+    "intro":"All in all, how would you describe your state of health these days?",
+    "text":"",
     "options":[
       "very good",
       "good",
@@ -198,8 +198,8 @@ questions = [
     ]
   },
   {
-    "intro":"",
-    "text":"How proud are you to be a citizen of your country?",
+    "intro":"How proud are you to be a citizen of your country?",
+    "text":"",
     "options":[
       "very proud",
       "fairly proud",
@@ -209,8 +209,8 @@ questions = [
     ]
   },
   {
-    "intro":"",
-    "text":"How often, in your experience, are subordinates afraid to contradict their boss (or students their teacher)?",
+    "intro":"How often, in your experience, are subordinates afraid to contradict their boss (or students their teacher)?",
+    "text":"",
     "options":[
       "always",
       "usually",
