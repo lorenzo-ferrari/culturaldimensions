@@ -205,6 +205,15 @@
       border-top: 8px solid #3f51b5;
       font-family: Roboto Slab
     }
+
+    .unselectable {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
   </style>
 
  <script>
@@ -219,12 +228,12 @@
     return(NaN);
   }
 
-  document.getElementById("pdi").innerHTML = getQueryVariable("pdi");
-  document.getElementById("idv").innerHTML = getQueryVariable("idv");
-  document.getElementById("mas").innerHTML = getQueryVariable("mas");
-  document.getElementById("uai").innerHTML = getQueryVariable("uai");
-  document.getElementById("lto").innerHTML = getQueryVariable("lto");
-  document.getElementById("ivr").innerHTML = getQueryVariable("ivr");
+  // document.getElementById("pdi").innerHTML = getQueryVariable("pdi");
+  // document.getElementById("idv").innerHTML = getQueryVariable("idv");
+  // document.getElementById("mas").innerHTML = getQueryVariable("mas");
+  // document.getElementById("uai").innerHTML = getQueryVariable("uai");
+  // document.getElementById("lto").innerHTML = getQueryVariable("lto");
+  // document.getElementById("ivr").innerHTML = getQueryVariable("ivr");
 
   values = [];
   values[0] = getQueryVariable("pdi");
@@ -260,10 +269,10 @@
     }
   }
 
-  for (let i = 0; i < k; ++i) {
-    let id = "closest_" + (i+1);
-    document.getElementById(id).innerHTML = countries[closest[i]].name + " : " + countries[closest[i]].values;
-  }
+  // for (let i = 0; i < k; ++i) {
+  //   let id = "closest_" + (i+1);
+  //   document.getElementById(id).innerHTML = countries[closest[i]].name + " : " + countries[closest[i]].values;
+  // }
   </script>
 
 </html>
