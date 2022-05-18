@@ -1,110 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/output.css" rel="stylesheet">
     <script type="application/javascript" src="./js/countries.js"></script>
+    <script type="application/javascript" src="./js/dropdown.js"></script>
     <title>Cultural Dimensions</title>
-  </head>
-  <body class="area" style="overflow-x:hidden;">
-  <div class="">
-  <ul class="circles relative -z-10">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+</head>
 
-    <nav class="flex justify-center items-center z-10">
-      <div class="rounded-b-xl bg-white h-[4rem] px-[5rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
-        <div class="w-[100%] min-w-[400px] mx-auto">
-          <p class="relative font-bold text-blue-500 text-3xl whitespace-nowrap ml-[2rem] w-[50%]">Cultural Dimensions</p></div>
-          <div class="w-[50%] justify-end flex xl:visible xl:relative absolute invisible">
-            <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">Home</span>
-            <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl cursortransition-[1s]">Test</span>
-            <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">About</span>
-          </div>
-          <div class="xl:invisible visible flex w-[50%] justify-end flex-col">
-              <div class="h-[2.5rem] w-[2.5rem] bg-blue-400 rounded-xl flex justify-around items-center cursor-pointer">
-                  <img src="pictures/hamburger.png" class="w-[90%] h-[90%] invert" onclick="toggleDropdown()">
-                  <div class="flex flex-col w-[200px] absolute top-[3.5rem] z-10 invisible" id="dropdown">
-                    <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">Home</div>
-                    <div class="h-[3rem] w-full bg-blue-500 hover:bg-blue-700 text-center leading-[3rem] text-white text-2xl">Test</div>
-                    <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">About</div>
-                  </div>
+<body class="area" style="overflow-x:hidden;">
+    <div class="">
+        <ul class="circles relative -z-10">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <nav class="flex justify-center items-center z-10">
+            <div class="rounded-b-xl bg-white h-[4rem] px-[5rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
+                <div class="w-[100%] min-w-[400px] mx-auto">
+                    <p class="relative font-bold text-blue-500 text-3xl whitespace-nowrap ml-[2rem] w-[50%]">Cultural Dimensions</p>
                 </div>
-          </div>
-      </div>
-    </nav>
-
-    <div class="container flex-col justify-around items-center my-10  h-[100vh] w-[100%] bg-gradient-to-tr from-white to-white rounded-xl mx-auto shadow-md flex-col min-h-[580px] max-w-[700px] sm:w-[60%] p-5">
-      <h1 class="font-bold text-black text-3xl transition-[2s] relative my-[3rem] mx-5 text-center" id="resultsText">Your results:</h1>
-      <div class="flex flex-col justify-center relative top-[-0px] w-full h-[10vh]">
-        <div id="diagram" class="mx-auto absolute top-[0rem] w-full h-[12rem] justify-around items-center text-center opacity-1 transition-[1s] flex">
-          
-          <div class="flex justify-center flex-col h-full w-[50px]">  
-            <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="pdiBar" class="w-full h-[30%] bg-white">
-                <h1 id="pdiVal" class="relative top-[calc(100%-20px)]">20</h1>
-              </div>
+                <div class="w-[50%] justify-end flex xl:visible xl:relative absolute invisible">
+                    <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">Home</span>
+                    <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl cursortransition-[1s]">Test</span>
+                    <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">About</span>
+                </div>
+                <div class="xl:invisible visible flex w-[50%] justify-end flex-col">
+                    <div class="h-[2.5rem] w-[2.5rem] bg-blue-400 rounded-xl flex justify-around items-center cursor-pointer">
+                        <img src="pictures/hamburger.png" class="w-[90%] h-[90%] invert" onclick="toggleDropdown()">
+                        <div class="flex flex-col w-[200px] absolute top-[3.5rem] z-10 invisible" id="dropdown">
+                            <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">Home</div>
+                            <div class="h-[3rem] w-full bg-blue-500 hover:bg-blue-700 text-center leading-[3rem] text-white text-2xl">Test</div>
+                            <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">About</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="rotate-45 mt-4">PDI</h1>
-          </div>
+        </nav>
 
-          <div class="flex justify-center flex-col h-full w-[50px]">
-            <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="idvBar" class="w-full h-[30%] bg-white">
-                <h1 id="idvVal" class="relative top-[calc(100%-20px)]">20</h1>
-              </div>
-            </div>
-            <h1 class="rotate-45 mt-4">IDV</h1>
-          </div>
+        <div class="container flex-col justify-around items-center my-10  h-[100vh] w-[100%] bg-gradient-to-tr from-white to-white rounded-xl mx-auto shadow-md flex-col min-h-[580px] max-w-[700px] sm:w-[60%] p-5">
+            <h1 class="font-bold text-black text-3xl transition-[2s] relative my-[3rem] mx-5 text-center" id="resultsText">Your results:</h1>
+            <div class="flex flex-col justify-center relative top-[-0px] w-full h-[10vh]">
+                <div id="diagram" class="mx-auto absolute top-[0rem] w-full h-[12rem] justify-around items-center text-center opacity-1 transition-[1s] flex">
 
-          <div class="flex justify-center flex-col h-full w-[50px]">
-            <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="masBar" class="w-full h-[30%] bg-white">
-                <h1 id="masVal" class="relative top-[calc(100%-20px)]">20</h1>
-              </div>
-            </div>
-            <h1 class="rotate-45 mt-4">MAS</h1>
-          </div>
+                    <div class="flex justify-center flex-col h-full w-[50px]">
+                        <div class="w-[50px] h-[120px] bg-blue-400 relative">
+                            <div id="pdiBar" class="w-full h-[30%] bg-white">
+                                <h1 id="pdiVal" class="relative top-[calc(100%-20px)]">20</h1>
+                            </div>
+                        </div>
+                        <h1 class="rotate-45 mt-4">PDI</h1>
+                    </div>
 
-          <div class="flex justify-center flex-col h-full w-[50px]">
-            <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="uaiBar" class="w-full h-[30%] bg-white">
-                <h1 id="uaiVal" class="relative top-[calc(100%-20px)]">20</h1>
-              </div>
-            </div>
-            <h1 class="rotate-45 mt-4">UAI</h1>
-          </div>
+                    <div class="flex justify-center flex-col h-full w-[50px]">
+                        <div class="w-[50px] h-[120px] bg-blue-400 relative">
+                            <div id="idvBar" class="w-full h-[30%] bg-white">
+                                <h1 id="idvVal" class="relative top-[calc(100%-20px)]">20</h1>
+                            </div>
+                        </div>
+                        <h1 class="rotate-45 mt-4">IDV</h1>
+                    </div>
 
-          <div class="flex justify-center flex-col h-full w-[50px]">
-            <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="ltoBar" class="w-full h-[30%] bg-white">
-                <h1 id="ltoVal" class="relative top-[calc(100%-20px)]">20</h1>
-              </div>
-            </div>
-            <h1 class="rotate-45 mt-4">LTO</h1>
-          </div>
+                    <div class="flex justify-center flex-col h-full w-[50px]">
+                        <div class="w-[50px] h-[120px] bg-blue-400 relative">
+                            <div id="masBar" class="w-full h-[30%] bg-white">
+                                <h1 id="masVal" class="relative top-[calc(100%-20px)]">20</h1>
+                            </div>
+                        </div>
+                        <h1 class="rotate-45 mt-4">MAS</h1>
+                    </div>
 
-          <div class="flex justify-center flex-col h-full w-[50px]">
-            <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="ivrBar" class="w-full h-[30%] bg-white">
-                <h1 id="ivrVal" class="relative top-[calc(100%-20px)]">20</h1>
-              </div>
-            </div>
-            <h1 class="rotate-45 mt-4">IVR</h1>
-          </div>
+                    <div class="flex justify-center flex-col h-full w-[50px]">
+                        <div class="w-[50px] h-[120px] bg-blue-400 relative">
+                            <div id="uaiBar" class="w-full h-[30%] bg-white">
+                                <h1 id="uaiVal" class="relative top-[calc(100%-20px)]">20</h1>
+                            </div>
+                        </div>
+                        <h1 class="rotate-45 mt-4">UAI</h1>
+                    </div>
 
-        </div>
-        <!--
+                    <div class="flex justify-center flex-col h-full w-[50px]">
+                        <div class="w-[50px] h-[120px] bg-blue-400 relative">
+                            <div id="ltoBar" class="w-full h-[30%] bg-white">
+                                <h1 id="ltoVal" class="relative top-[calc(100%-20px)]">20</h1>
+                            </div>
+                        </div>
+                        <h1 class="rotate-45 mt-4">LTO</h1>
+                    </div>
+
+                    <div class="flex justify-center flex-col h-full w-[50px]">
+                        <div class="w-[50px] h-[120px] bg-blue-400 relative">
+                            <div id="ivrBar" class="w-full h-[30%] bg-white">
+                                <h1 id="ivrVal" class="relative top-[calc(100%-20px)]">20</h1>
+                            </div>
+                        </div>
+                        <h1 class="rotate-45 mt-4">IVR</h1>
+                    </div>
+
+                </div>
+                <!--
         <div class="mx auto absolute flex w-full justify-around items-center top-[10rem]">
           <h1 class="rotate-45 mt-4">Power distance</h1>
           <h1 class="rotate-45 mt-4">Long Term Orientation</h1>
@@ -115,263 +119,251 @@
         </div>
         -->
 
-        <!-- table -->
-        <div class="relative top-[18rem] opacity-0">
-          <h1 class="text-center text-3xl">Your closest countries</h1>
-            <table class="m-2">
-              <thead>
-                <tr>
-                  <th>Country</th>
-                  <th>Power distance</th>
-                  <th>Individualism</th>
-                  <th>Masculinity</th>
-                  <th>Uncertainty Avoidance</th>
-                  <th>Long Term Orientation</th>
-                  <th>Indulgence</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>placeholder</td>
-                  <td>null</td>
-                  <td>null</td>
-                  <td>null</td>
-                  <td>null</td>
-                  <td>null</td>
-                  <td>null</td>
-                </tr>
-              </tbody>
-          </table>
+                <!-- table -->
+                <div class="relative top-[18rem] opacity-0">
+                    <h1 class="text-center text-3xl">Your closest countries</h1>
+                    <table class="m-2">
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>Power distance</th>
+                                <th>Individualism</th>
+                                <th>Masculinity</th>
+                                <th>Uncertainty Avoidance</th>
+                                <th>Long Term Orientation</th>
+                                <th>Indulgence</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>placeholder</td>
+                                <td>null</td>
+                                <td>null</td>
+                                <td>null</td>
+                                <td>null</td>
+                                <td>null</td>
+                                <td>null</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  </body>
-  <style>
+</body>
+<style>
     th {
-      padding-top: 6px;
-      padding-bottom: 6px;
-      text-align: center;
-      background-color: rgb(96, 165, 250);
-      color: white;
-      margin-right:20px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: center;
+        background-color: rgb(96, 165, 250);
+        color: white;
+        margin-right: 20px;
     }
+
     tr {
-      text-align: center;
+        text-align: center;
     }
 
     .circles {
-      height:120%;
+        height: 120%;
     }
 
     .area {
-      height:120vh;
+        height: 120vh;
 
     }
 
     #but:active {
-      -webkit-animation-name: cssAnimation;
-      -webkit-animation-duration: 3s;
-      -webkit-animation-iteration-count: 1;
-      -webkit-animation-timing-function: ease;
-      -webkit-animation-fill-mode: forwards;
+        -webkit-animation-name: cssAnimation;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: forwards;
     }
 
     @-webkit-keyframes cssAnimation {
-      from {
-        border:0;
-      }
-      to {
-        border: 3px solid black;
-      }
+        from {
+            border: 0;
+        }
+
+        to {
+            border: 3px solid black;
+        }
     }
 
     .area {
-      background: linear-gradient(to bottom right, rgb(105, 189, 215), rgb(71, 61, 185));
-      height:100vh;
-      min-height: 730px;
-      background-size: 100% 130%;
+        background: linear-gradient(to bottom right, rgb(105, 189, 215), rgb(71, 61, 185));
+        height: 100vh;
+        min-height: 730px;
+        background-size: 100% 130%;
     }
-    
+
     .range {
-      display: inline-block;
-      --SliderColor: hsl(50, 100%, 50%);
-      margin: 36px 20px 20px
+        display: inline-block;
+        --SliderColor: hsl(50, 100%, 50%);
+        margin: 36px 20px 20px
     }
 
     input[type=range] {
-      -webkit-appearance: none;
-      position: relative
+        -webkit-appearance: none;
+        position: relative
     }
 
     input[type=range]::-webkit-slider-runnable-track {
-      width: 300px;
-      height: 4px;
-      border: none;
-      border-radius: 3px
+        width: 300px;
+        height: 4px;
+        border: none;
+        border-radius: 3px
     }
 
     input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      border: none;
-      height: 24px;
-      width: 24px;
-      border-radius: 510%;
-      background: var(--SliderColor);
-      margin-top: -10px;
-      cursor: pointer
+        -webkit-appearance: none;
+        border: none;
+        height: 24px;
+        width: 24px;
+        border-radius: 510%;
+        background: var(--SliderColor);
+        margin-top: -10px;
+        cursor: pointer
     }
 
     .focused::-webkit-slider-thumb {
-      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.15)
     }
 
     .clicked::-webkit-slider-thumb {
-      -webkit-transform: scale(1.5)
+        -webkit-transform: scale(1.5)
     }
 
     .disabled::-webkit-slider-thumb {
-      -webkit-transform: scale(0.9);
-      box-shadow: 0 0 0 3px #141414;
-      background: #515151 !important;
-      border-color: #515151 !important
+        -webkit-transform: scale(0.9);
+        box-shadow: 0 0 0 3px #141414;
+        background: #515151 !important;
+        border-color: #515151 !important
     }
 
     input[type=range]:focus {
-      outline: none
+        outline: none
     }
 
     .rangeM input[type=range].disabled::-webkit-slider-runnable-track {
-      background: #515151!important
+        background: #515151 !important
     }
 
     .rangeM input[type=range]::-webkit-slider-thumb {
-      background: #3f51b5;
-      border-color: #3f51b5
+        background: #3f51b5;
+        border-color: #3f51b5
     }
 
     .range:hover input[type=range]:before {
-      color: white;
-      content: '50';
-      position: absolute;
-      font-family: Roboto Slab;
-      top: -49px;
-      background: #3f51b5;
-      padding: 8px 0 3px;
-      font-size: 14px;
-      width: 30px;
-      text-align: center;
-      border-radius: 100% 100% 0 0
+        color: white;
+        content: '50';
+        position: absolute;
+        font-family: Roboto Slab;
+        top: -49px;
+        background: #3f51b5;
+        padding: 8px 0 3px;
+        font-size: 14px;
+        width: 30px;
+        text-align: center;
+        border-radius: 100% 100% 0 0
     }
 
     .range:hover input[type=range]:after {
-      content: '';
-      position: absolute;
-      top: -19px;
-      left: 50px;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-top: 8px solid #3f51b5;
-      font-family: Roboto Slab
+        content: '';
+        position: absolute;
+        top: -19px;
+        left: 50px;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 8px solid #3f51b5;
+        font-family: Roboto Slab
     }
-  </style>
-
-<!-- Hamburger dropdown -->
-  <script>
-    let shown = false;
-    let dropdown = document.getElementById("dropdown")
-
-    function toggleDropdown() {
-      shown = !shown;
-      if (shown) {
-        dropdown.style.visibility = "visible";
-      } else {
-        dropdown.style.visibility = "hidden";
-      }
-
-    }
-  </script>
+</style>
 
 <!-- JavaScript for the results -->
 <script>
-  function getQueryVariable(variable)
-  {
-    var query = window.location.search.substring(1)
-    var vars = query.split("&")
-    for (var i=0;i<vars.length;i++) {
-      var pair = vars[i].split("=")
-        if(pair[0] == variable) {return pair[1]}
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1)
+        var vars = query.split("&")
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=")
+            if (pair[0] == variable) {
+                return pair[1]
+            }
+        }
+        return (NaN);
     }
-    return(NaN);
-  }
 
-  values = [];
-  values[0] = getQueryVariable("pdi");
-  values[1] = getQueryVariable("idv");
-  values[2] = getQueryVariable("mas");
-  values[3] = getQueryVariable("uai");
-  values[4] = getQueryVariable("lto");
-  values[5] = getQueryVariable("ivr");
+    values = [];
+    values[0] = getQueryVariable("pdi");
+    values[1] = getQueryVariable("idv");
+    values[2] = getQueryVariable("mas");
+    values[3] = getQueryVariable("uai");
+    values[4] = getQueryVariable("lto");
+    values[5] = getQueryVariable("ivr");
 
-  let pdiBar = document.getElementById("pdiBar");
-  let idvBar = document.getElementById("idvBar");
-  let masBar = document.getElementById("masBar");
-  let uaiBar = document.getElementById("uaiBar");
-  let ltoBar = document.getElementById("ltoBar");
-  let ivrBar = document.getElementById("ivrBar");
+    let pdiBar = document.getElementById("pdiBar");
+    let idvBar = document.getElementById("idvBar");
+    let masBar = document.getElementById("masBar");
+    let uaiBar = document.getElementById("uaiBar");
+    let ltoBar = document.getElementById("ltoBar");
+    let ivrBar = document.getElementById("ivrBar");
 
-  pdiBar.style.height = (100 - values[0]) + "%";
-  idvBar.style.height = (100 - values[1]) + "%";
-  masBar.style.height = (100 - values[2]) + "%";
-  uaiBar.style.height = (100 - values[3]) + "%";
-  ltoBar.style.height = (100 - values[4]) + "%";
-  ivrBar.style.height = (100 - values[5]) + "%";
-  
-  let pdiVal = document.getElementById("pdiVal");
-  let idvVal = document.getElementById("idvVal");
-  let masVal = document.getElementById("masVal");
-  let uaiVal = document.getElementById("uaiVal");
-  let ltoVal = document.getElementById("ltoVal");
-  let ivrVal = document.getElementById("ivrVal");
+    pdiBar.style.height = (100 - values[0]) + "%";
+    idvBar.style.height = (100 - values[1]) + "%";
+    masBar.style.height = (100 - values[2]) + "%";
+    uaiBar.style.height = (100 - values[3]) + "%";
+    ltoBar.style.height = (100 - values[4]) + "%";
+    ivrBar.style.height = (100 - values[5]) + "%";
 
-  pdiVal.innerHTML = values[0];
-  idvVal.innerHTML = values[1];
-  masVal.innerHTML = values[2];
-  uaiVal.innerHTML = values[3];
-  ltoVal.innerHTML = values[4];
-  ivrVal.innerHTML = values[5];
+    let pdiVal = document.getElementById("pdiVal");
+    let idvVal = document.getElementById("idvVal");
+    let masVal = document.getElementById("masVal");
+    let uaiVal = document.getElementById("uaiVal");
+    let ltoVal = document.getElementById("ltoVal");
+    let ivrVal = document.getElementById("ivrVal");
 
-  function distance_sq(oth) {
-    ans = 0;
-    for (let i = 0; i < 6; ++i) {
-      ans += (values[i] - oth[i]) * (values[i] - oth[i]);
+    pdiVal.innerHTML = values[0];
+    idvVal.innerHTML = values[1];
+    masVal.innerHTML = values[2];
+    uaiVal.innerHTML = values[3];
+    ltoVal.innerHTML = values[4];
+    ivrVal.innerHTML = values[5];
+
+    function distance_sq(oth) {
+        ans = 0;
+        for (let i = 0; i < 6; ++i) {
+            ans += (values[i] - oth[i]) * (values[i] - oth[i]);
+        }
+        return ans;
     }
-    return ans;
-  }
 
-  let k = 5; // find the closest k countries
-  let closest = [];
-  for (let i = 0; i < k; ++i) closest[i] = NaN;
+    const k = 5; // find the closest k countries
+    let closest = [];
+    for (let i = 0; i < k; ++i) closest[i] = NaN;
 
-  for (let i = 0; i < countries.length; ++i) {
-    // console.log(closest);
-    if (isNaN(closest[k-1]) || distance_sq(countries[closest[k-1]].values) > distance_sq(countries[i].values)) {
-      closest[k-1] = i;
+    for (let i = 0; i < countries.length; ++i) {
+        if (isNaN(closest[k - 1]) || distance_sq(countries[closest[k - 1]].values) > distance_sq(countries[i].values)) {
+            closest[k - 1] = i;
+        }
+        for (let j = k - 2; j >= 0; --j) {
+            if (isNaN(closest[j]) || distance_sq(countries[closest[j + 1]].values) < distance_sq(countries[closest[j]].values)) {
+                let tmp = closest[j];
+                closest[j] = closest[j + 1];
+                closest[j + 1] = tmp;
+            }
+        }
     }
-    for (let j = k-2; j >= 0; --j) {
-      if (isNaN(closest[j]) || distance_sq(countries[closest[j+1]].values) < distance_sq(countries[closest[j]].values)) {
-        let tmp = closest[j];
-        closest[j] = closest[j+1];
-        closest[j+1] = tmp;
-      }
-    }
-  }
 
-  console.log("indexes of the " + k + " closest countries: " + closest);
+    console.log("indexes of the " + k + " closest countries: " + closest);
 
-  // for (let i = 0; i < k; ++i) {
-  //   let id = "closest_" + (i+1);
-  //   document.getElementById(id).innerHTML = countries[closest[i]].name + " : " + countries[closest[i]].values;
-  // }
-  </script>
+    // TO DO: implement table with k closest countries
+    // for (let i = 0; i < k; ++i) {
+    //   let id = "closest_" + (i+1);
+    //   document.getElementById(id).innerHTML = countries[closest[i]].name + " : " + countries[closest[i]].values;
+    // }
+</script>
+
 </html>
