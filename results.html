@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/output.css" rel="stylesheet">
-    <script type="application/javascript" src="./countries.js"></script>
-    <title>Cultural Dimensions</title>
+    <title>Artificial Labs - Hvilket land er du?</title>
   </head>
   <body class="area" style="overflow-x:hidden;">
   <div class="">
@@ -24,95 +23,149 @@
 
     <nav class="flex justify-center items-center z-10">
       <div class="rounded-b-xl bg-white h-[4rem] px-[5rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
-        <div class="inline-block w-[30%] min-w-[200px] mx-auto"></p><p class="inline-block font-bold text-blue-500 text-3xl ">Cultural Dimensions</p></div>
-        <div class="w-[70%] mx-[10%] justify-around flex">
-          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">Home</span>
-          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl cursortransition-[1s]">Test</span>
-          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">About</span>
-        </div>
+        <div class="w-[100%] min-w-[400px] mx-auto">
+          <p class="relative font-bold text-blue-500 text-3xl whitespace-nowrap ml-[2rem] w-[50%]">Cultural Dimensions</p></div>
+          <div class="w-[50%] justify-end flex xl:visible xl:relative absolute invisible">
+            <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">Home</span>
+            <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl cursortransition-[1s]">Test</span>
+            <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 hover:text-white text-xl transition-[1s]">About</span>
+          </div>
+          <div class="xl:invisible visible flex w-[50%] justify-end flex-col">
+              <div class="h-[2.5rem] w-[2.5rem] bg-blue-400 rounded-xl flex justify-around items-center cursor-pointer">
+                  <img src="hamburger.png" class="w-[90%] h-[90%] invert" onclick="toggleDropdown()">
+                  <div class="flex flex-col w-[200px] absolute top-[3.5rem] z-10 invisible" id="dropdown">
+                    <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">Home</div>
+                    <div class="h-[3rem] w-full bg-blue-500 hover:bg-blue-700 text-center leading-[3rem] text-white text-2xl">Test</div>
+                    <div class="h-[3rem] w-full bg-blue-400 hover:bg-blue-600 text-center leading-[3rem] text-white text-2xl">About</div>
+                  </div>
+                </div>
+          </div>
       </div>
     </nav>
 
-    <div class="container flex-col justify-around items-center my-10  h-[80vh] w-[100%] bg-gradient-to-tr from-white to-white rounded-xl mx-auto shadow-md flex-col min-h-[580px] max-w-[700px] sm:w-[60%] p-5">
-
-      <h1 class="font-bold text-black text-3xl transition-[2s] relative my-[5rem] mx-5 text-center" id="resultsText">Your dimensions:</h1>
-
+    <div class="container flex-col justify-around items-center my-10  h-[100vh] w-[100%] bg-gradient-to-tr from-white to-white rounded-xl mx-auto shadow-md flex-col min-h-[580px] max-w-[700px] sm:w-[60%] p-5">
+      <h1 class="font-bold text-black text-3xl transition-[2s] relative my-[3rem] mx-5 text-center" id="resultsText">Here are your results</h1>
       <div class="flex flex-col justify-center relative top-[-0px] w-full h-[10vh]">
-        <div id="diagram" class="mx-auto absolute top-[3rem] w-full h-[12rem] justify-around items-center text-center opacity-1 transition-[1s] flex">
-          <div class="flex justify-center flex-col h-full w-[50px]">
+        <div id="diagram" class="mx-auto absolute top-[0rem] w-full h-[12rem] justify-around items-center text-center opacity-1 transition-[1s] flex">
+          
+          <div class="flex justify-center flex-col h-full w-[50px]">  
             <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="pdiBar" class="w-full h-[40%] bg-red-400">
-
+              <div id="pdiBar" class="w-full h-[30%] bg-white">
+                <h1 id="pdiVal" class="relative top-[calc(100%-20px)]">20</h1>
               </div>
             </div>
-            <h1 class="rotate-45 mt-4">PDI</h1>
+            <h1 class="rotate-45 mt-4">Power distance</h1>
           </div>
 
           <div class="flex justify-center flex-col h-full w-[50px]">
             <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="idvBar" class="w-full h-[40%] bg-red-400">
-
+              <div id="idvBar" class="w-full h-[30%] bg-white">
+                <h1 id="idvVal" class="relative top-[calc(100%-20px)]">20</h1>
               </div>
             </div>
-            <h1 class="rotate-45 mt-4">IDV</h1>
+            <h1 class="rotate-45 mt-4">Long Term Orientation</h1>
           </div>
 
           <div class="flex justify-center flex-col h-full w-[50px]">
             <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="masBar" class="w-full h-[40%] bg-red-400">
-
+              <div id="masBar" class="w-full h-[30%] bg-white">
+                <h1 id="masVal" class="relative top-[calc(100%-20px)]">20</h1>
               </div>
             </div>
-            <h1 class="rotate-45 mt-4">MAS</h1>
+            <h1 class="rotate-45 mt-4">Country name</h1>
           </div>
 
           <div class="flex justify-center flex-col h-full w-[50px]">
             <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="uaiBar" class="w-full h-[40%] bg-red-400">
-
+              <div id="uaiBar" class="w-full h-[30%] bg-white">
+                <h1 id="uaiVal" class="relative top-[calc(100%-20px)]">20</h1>
               </div>
             </div>
-            <h1 class="rotate-45 mt-4">UAI</h1>
+            <h1 class="rotate-45 mt-4">Country name</h1>
           </div>
 
           <div class="flex justify-center flex-col h-full w-[50px]">
             <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="ltoBar" class="w-full h-[40%] bg-red-400">
-
+              <div id="ltoBar" class="w-full h-[30%] bg-white">
+                <h1 id="ltoVal" class="relative top-[calc(100%-20px)]">20</h1>
               </div>
             </div>
-            <h1 class="rotate-45 mt-4">LTO</h1>
+            <h1 class="rotate-45 mt-4">Country name</h1>
           </div>
 
           <div class="flex justify-center flex-col h-full w-[50px]">
             <div class="w-[50px] h-[120px] bg-blue-400 relative">
-              <div id="ivrBar" class="w-full h-[40%] bg-red-400">
-
+              <div id="ivrBar" class="w-full h-[30%] bg-white">
+                <h1 id="ivrVal" class="relative top-[calc(100%-20px)]">20</h1>
               </div>
             </div>
-            <h1 class="rotate-45 mt-4">IVR</h1>
+            <h1 class="rotate-45 mt-4">Country name</h1>
           </div>
+
         </div>
-
-        <!-- start TEST -->
-        <div class="opacity-0">
-          <p>PDI: <span id="pdiVal">placeholder</span></p>
-          <p>IDV: <span id="idvVal">placeholder</span></p>
-          <p>MAS: <span id="masVal">placeholder</span></p>
-          <p>UAI: <span id="uaiVal">placeholder</span></p>
-          <p>LTO: <span id="ltoVal">placeholder</span></p>
-          <p>IVR: <span id="ivrVal">placeholder</span></p>
+        <!--
+        <div class="mx auto absolute flex w-full justify-around items-center top-[10rem]">
+          <h1 class="rotate-45 mt-4">Power distance</h1>
+          <h1 class="rotate-45 mt-4">Long Term Orientation</h1>
+          <h1 class="rotate-45 mt-4">Power distance</h1>
+          <h1 class="rotate-45 mt-4">Power distance</h1>
+          <h1 class="rotate-45 mt-4">Power distance</h1>
+          <h1 class="rotate-45 mt-4">Power distance</h1>
         </div>
-        <!-- end TEST -->
+        -->
 
-
+        <!-- table -->
+        <div class="relative top-[18rem]">
+          <h1 class="text-center text-3xl">Your closest countries</h1>
+            <table class="m-2">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>Power distance</th>
+                  <th>Individualism</th>
+                  <th>Masculinity</th>
+                  <th>Uncertainty Avoidance</th>
+                  <th>Long Term Orientation</th>
+                  <th>Indulgence</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>placeholder</td>
+                  <td>null</td>
+                  <td>null</td>
+                  <td>null</td>
+                  <td>null</td>
+                  <td>null</td>
+                  <td>null</td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
   </body>
   <style>
+    th {
+      padding-top: 6px;
+      padding-bottom: 6px;
+      text-align: center;
+      background-color: rgb(96, 165, 250);
+      color: white;
+      margin-right:20px;
+    }
+    tr {
+      text-align: center;
+    }
+
     .circles {
-      height:100%;
+      height:120%;
+    }
+
+    .area {
+      height:120vh;
+
     }
 
     #but:active {
@@ -136,6 +189,7 @@
       background: linear-gradient(to bottom right, rgb(105, 189, 215), rgb(71, 61, 185));
       height:100vh;
       min-height: 730px;
+      background-size: 100% 130%;
     }
     
     .range {
@@ -219,18 +273,26 @@
       border-top: 8px solid #3f51b5;
       font-family: Roboto Slab
     }
-
-    .unselectable {
-      -webkit-touch-callout: none;
-      -webkit-user-select: none;
-      -khtml-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
   </style>
 
- <script>
+<!-- Hamburger dropdown -->
+  <script>
+    let shown = false;
+    let dropdown = document.getElementById("dropdown")
+
+    function toggleDropdown() {
+      shown = !shown;
+      if (shown) {
+        dropdown.style.visibility = "visible";
+      } else {
+        dropdown.style.visibility = "hidden";
+      }
+
+    }
+  </script>
+
+<!-- JavaScript for the results -->
+<script>
   function getQueryVariable(variable)
   {
     var query = window.location.search.substring(1)
@@ -309,5 +371,4 @@
   //   document.getElementById(id).innerHTML = countries[closest[i]].name + " : " + countries[closest[i]].values;
   // }
   </script>
-
 </html>
