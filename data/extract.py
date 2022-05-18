@@ -1,11 +1,5 @@
 """
-countries = [
-{
-  "name":"Middle-earth",
-  "values":[...]
-},
-...
-];
+create a js array containing the data from `6-dimensions.csv`
 """
 
 def lineToJson(line):
