@@ -92,8 +92,6 @@
         }
     }
 
-
-
     .area {
         background: linear-gradient(to bottom right, rgb(105, 189, 215), rgb(71, 61, 185));
         height: 120vh;
@@ -213,6 +211,7 @@
         introText.style.top = "-120px";
 
         questionText.style.visibility = "visible";
+        questionText.style.opacity = "1";
         questionBox.style.visibility = "visible";
         questionBox.style.opacity = "1";
 
@@ -223,7 +222,7 @@
         answers[current_question] = value;
         ++current_question;
 
-        console.log("answer: " + current_question);
+        console.log("answer: " + value);
 
         if (current_question == questions.length) {
             results();
