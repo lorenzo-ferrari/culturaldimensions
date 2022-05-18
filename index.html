@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/output.css" rel="stylesheet">
+    <title>Artificial Labs - Hvilket land er du?</title>
   </head>
-  <body class="area">
+  <body class="area" style="overflow-x:hidden;">
+  <div class="">
   <ul class="circles relative -z-10">
     <li></li>
     <li></li>
@@ -20,39 +22,67 @@
   </ul>
 
     <nav class="flex justify-center items-center z-10">
-      <div class="rounded-b-xl bg-blue-400 h-[4rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
-        <div class="inline-block w-[30%] min-w-[200px] mx-auto"></p><p class="inline-block font-bold text-white text-3xl ">Artificial Labs</p></div>
+      <div class="rounded-b-xl bg-white h-[4rem] px-[5rem] w-[80%] min-w-[500px] items-center flex justify-around max-w-[900px] md:w-[65%] p-5 shadow-md">
+        <div class="inline-block w-[30%] min-w-[200px] mx-auto"></p><p class="inline-block font-bold text-blue-500 text-3xl ">Artificial Labs</p></div>
         <div class="w-[70%] mx-[10%] justify-around flex">
-          <span class="text-white font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 transition-[1s]">Home</span>
-          <span class="text-white font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 transition-[1s]">Test</span>
-          <span class="text-white font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 transition-[1s]">About</span>
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">Home</span>
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl cursortransition-[1s]">Test</span>
+          <span class="text-blue-400 font-bold px-4 py-3 cursor-pointer rounded-md hover:bg-blue-600 text-xl transition-[1s]">About</span>
         </div>
       </div>
     </nav>
 
-    <div class="container main flex justify-center items-center my-10 h-[80vh] w-[60%] bg-gradient-to-tr from-blue-400 to-blue-500 rounded-xl mx-auto shadow-md flex-col min-h-[700px] max-w-[1000px] p-5">
+    <div class="container flex justify-center items-center my-10  h-[80vh] w-[100%] bg-gradient-to-tr from-white to-white rounded-xl mx-auto shadow-md flex-col min-h-[580px] max-w-[700px] sm:w-[60%] p-5">
 
-      <h1 class="font-bold text-white text-3xl transition-[2s] relative top-0 mx-5 text-center" id="introText">Hvilket parti minder du mest om?</h1>
+      <h1 class="font-bold text-black text-3xl transition-[2s] relative top-0 mx-5 text-center" id="introText">Hvilket parti minder du mest om?</h1>
       <button onclick="beginQuestioniare()" id="button" class="bg-cyan-800 hover:bg-blue-600 transition-[1s] text-white px-8 py-5 m-5 rounded-xl text-xl cursor-pointer">Start test</button>
 
-      <div class="flex flex-col justify-center relative top-[-200px] w-full">
-        <h2 id="questionText" class="invisible text-2xl text-white opacity-0 transition-[1s] mx-auto"></h2>
-        <div class="flex justify-around invisible opacity-0 relative top-[9rem] transition-[1s]" id="slider-container">
-          <p class="text-center font-bold text-white">Uenig<br>-5</p>
-          <input type="range" min="-5" max="5" value="0" class="slider range transition-[1s] w-[80%] max-w-[400px] mx-auto" id="slider">
-          <p class="text-center font-bold text-white">Enig<br>5</p>
-        </div>
+      <div class="flex flex-col justify-center relative top-[-200px] w-full h-[10vh]">
+        <h2 id="questionText" class="invisible text-2xl text-black text-center top-[7rem] relative opacity-0 transition-[1s] mx-auto"></h2>
         
-        <div class="mx-auto absolute left-[calc(50%-2rem)] top-[12rem]">
-          <div class="rounded-[50%] bg-white w-[4rem] h-[4rem] mx-auto"></div>
-          <img src="Rolling-1s-200px (1).svg" />
+        <div id="questionBox" class="mx-auto relative top-[10rem] justify-center items-center text-center invisible opacity-0 transition-[1s]">
+          <div onclick="nextQuestion(5)" id="but" class="w-[80%] hover:bg-green-700 whitespace-nowrap cursor-pointer px-[10rem] h-[3rem] bg-green-600 mx-auto justify-center flex items-center rounded my-1">Enig</div>
+          <div onclick="nextQuestion(4)" id="but" class="w-[80%] hover:bg-green-400 whitespace-nowrap cursor-pointer px-[10rem] h-[3rem] bg-green-300 mx-auto justify-center flex items-center rounded my-1">Lidt enig</div>
+          <div onclick="nextQuestion(3)" id="but" class="w-[80%] hover:bg-gray-600 whitespace-nowrap cursor-pointer px-[10rem] h-[3rem] bg-gray-500 mx-auto justify-center flex items-center rounded my-1">Hverken enig eller uenig</div>
+          <div onclick="nextQuestion(2)" id="but" class="w-[80%] hover:bg-red-400 whitespace-nowrap cursor-pointer px-[10rem] h-[3rem] bg-red-300 mx-auto justify-center flex items-center rounded my-1">Lidt uenig</div>
+          <div onclick="nextQuestion(1)" id="but" class="w-[80%] hover:bg-red-700 whitespace-nowrap cursor-pointer px-[10rem] h-[3rem] bg-red-600 mx-auto justify-center flex items-center rounded my-1">Uenig</div>
         </div>
+
         
       </div>
-      <button onclick="nextQuestion()" id="nextButton" class="bg-cyan-700 opacity-0 relative z-20 hover:bg-blue-600 top-[5rem] transition-[1s] text-white px-8 py-5 m-5 rounded-xl text-xl cursor-pointer invisible">Næste</button>
     </div>
+  </div>
   </body>
   <style>
+    .circles {
+      height:120%;
+    }
+
+    #but:active {
+      -webkit-animation-name: cssAnimation;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+    }
+
+    @-webkit-keyframes cssAnimation {
+      from {
+        border:0;
+      }
+      to {
+        border: 3px solid black;
+      }
+    }
+
+
+
+    .area {
+      background: linear-gradient(to bottom right, rgb(105, 189, 215), rgb(71, 61, 185));
+      height:120vh;
+      min-height: 730px;
+    }
+    
     .range {
       display: inline-block;
       --SliderColor: hsl(50, 100%, 50%);
@@ -141,7 +171,8 @@
     let introText = document.getElementById("introText");
 
     let questionText = document.getElementById("questionText");
-    let nextButton = document.getElementById("nextButton");
+    let questionBox = document.getElementById("questionBox");
+    //let nextButton = document.getElementById("nextButton");
     let slider = document.getElementById("slider");
     let slider_container = document.getElementById("slider-container");
 
@@ -153,27 +184,41 @@
       button.style.visibility = "hidden";
       button.style.opacity = "0";
 
-      introText.style.top = "-160px";
+      introText.style.top = "-120px";
 
       questionText.style.visibility = "visible";
-      nextButton.style.visibility = "visible";
-      slider.style.visibility = "visible";
-      slider_container.style.visibility = "visible";
+      //nextButton.style.visibility = "visible";
+      //slider.style.visibility = "visible";
+      //slider_container.style.visibility = "visible";
+      questionBox.style.visibility = "visible";
+      questionBox.style.opacity = "1";
 
       questionText.innerHTML = questions[current_question];
 
       setTimeout(() => {
         questionText.style.opacity = "1";
-        nextButton.style.opacity = "1";
-        slider.style.opacity = "1";
-        slider_container.style.opacity = "1";
+        //nextButton.style.opacity = "1";
+        //slider.style.opacity = "1";
+        //slider_container.style.opacity = "1";
        }, 300);
     }
 
-    function nextQuestion() {
+    function nextQuestion(value) {
       current_question += 1;
-      slider_container.style.opacity = "0";
+      console.log(current_question);
 
+      if (current_question == questions.length) {
+        answers.push(value);
+        console.log(questions);
+        console.log(answers);
+        questionText.innerHTML = "Quizzen er færdig. Her er dine resultater:";
+        questionBox.style.opacity = "0";
+        questionBox.style.visibility = "hidden";
+
+        return;
+      }
+      //slider_container.style.opacity = "0";
+      /*
       for (let i = 0; i<questionText.innerHTML.length+5; i++) {
         setTimeout(() => {
           questionText.innerHTML = questionText.innerHTML.slice(0, questionText.innerHTML.length-1);
@@ -188,16 +233,16 @@
         slider_container.style.opacity = "1";
       }
       }, 1500)
+      */
 
       questionText.innerHTML = questions[current_question];
 
-      answers.push(slider.value);
-      slider.value = 0;
-      console.log(answers);
+      answers.push(value);
+      //slider.value = 0;
     } 
 
 
-    slider.oninput =_=> {slider.style.setProperty('--SliderColor', `hsl(${(parseInt(slider.value) * 10)+50}, 100%, 50%)`); }
+    //slider.oninput =_=> {slider.style.setProperty('--SliderColor', `hsl(${(parseInt(slider.value) * 10)+50}, 100%, 50%)`); }
 
   </script>
 </html>
