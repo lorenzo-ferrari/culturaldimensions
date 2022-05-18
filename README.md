@@ -14,7 +14,7 @@ This project is not related in any way with Geert Hofstede.
 
 Visit [https://lorenzo-ferrari.github.io/culturaldimensions](https://lorenzo-ferrari.github.io/culturaldimensions), answer the questions and find out
 * an estimate of your personal cultural dimensions
-* which countries are you culturally closest to
+* which countries are you culturally closest to (TO DO)
 
 ## Authors
 <a href="https://github.com/lorenzo-ferrari/culturaldimensions/graphs/contributors">
