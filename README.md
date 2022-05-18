@@ -17,11 +17,10 @@ Visit [https://lorenzo-ferrari.github.io/culturaldimensions](https://lorenzo-fer
 * which countries are you culturally closest to
 
 ## Authors
-<br>
 <a href="https://github.com/lorenzo-ferrari/culturaldimensions/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=lorenzo-ferrari/culturaldimensions" />
 </a>
 
-<br><br>
+<br>
 
 In particular, special thanks go to @mk4x for managing the design.
