@@ -79,10 +79,3 @@ let table = document.getElementById("countriesResults");
 for (let i = 0; i<k; ++i) {
     table.innerHTML += "<tr><td>" + countries[closest[i]].name + "</td><td>" + countries[closest[i]].values[0] + "</td><td>" + countries[closest[i]].values[1] + "</td><td>" + countries[closest[i]].values[2] + "</td><td>" + countries[closest[i]].values[3] + "</td><td>" + countries[closest[i]].values[4] + "</td><td>" + countries[closest[i]].values[5] + "</td></tr>";
 }
-
-// TO DO: implement table with k closest countries
-// for (let i = 0; i < k; ++i) {
-//   let id = "closest_" + (i+1);
-//   document.getElementById(id).innerHTML = countries[closest[i]].name + " : " + countries[closest[i]].values;
-// }
-
